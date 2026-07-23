@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { SITE } from "@/data/site";
+import Image from "next/image";
 
 export function Hero() {
   const [progress, setProgress] = useState(0);
@@ -140,13 +141,13 @@ export function Hero() {
               layoutId="hero-photo"
               className="group relative z-10 w-full max-w-[440px] aspect-[4/5] sm:max-w-[480px] overflow-hidden rounded-3xl bg-black"
             >
-              <img
+              <Image
                 src="/MyPhoto.png"
                 alt="Sumit Deore | Software Engineer & Full Stack Developer"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                fill
+                priority
+                sizes="(max-w-768px) 100vw, 480px"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </motion.div>
           </div>
