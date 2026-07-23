@@ -93,7 +93,16 @@ export function About() {
                 <div
                   key={step.phase}
                   onClick={() => setActiveStep(idx)}
-                  className="group relative cursor-pointer"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setActiveStep(idx);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Show ${step.title} journey node`}
+                  className="group relative cursor-pointer outline-none focus-visible:ring-1 focus-visible:ring-[#FFB300] rounded-2xl"
                 >
                   {/* Glowing timeline node */}
                   <div

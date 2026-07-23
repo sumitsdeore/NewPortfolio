@@ -60,9 +60,32 @@ const CONCEPTS = [
   "Software Architecture",
 ];
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://sumitsdeore.vercel.app",
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resume",
+      "item": "https://sumitsdeore.vercel.app/resume",
+    },
+  ],
+};
+
 export default function ResumePage() {
   return (
     <div className="min-h-screen bg-black text-white px-6 py-12 md:py-24 font-body relative overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       {/* Background grid */}
       <div className="pointer-events-none absolute inset-0 -z-10 grid-bg opacity-30 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_20%,transparent_80%)]" />
 

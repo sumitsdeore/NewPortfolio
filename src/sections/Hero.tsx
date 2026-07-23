@@ -142,7 +142,10 @@ export function Hero() {
             >
               <img
                 src="/MyPhoto.png"
-                alt={SITE.name}
+                alt="Sumit Deore | Software Engineer & Full Stack Developer"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </motion.div>
